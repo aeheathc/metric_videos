@@ -48,7 +48,10 @@ impl Settings
             listen_addr: String::from("0.0.0.0:80")
         },
         media: Media{
-            videos: vec!["http://example.com/vid.mp4"]
+            videos: vec![
+                String::from("http://example.com/vid1.mp4"),
+                String::from("http://example.com/vid2.mp4")
+            ]
         }
     };
 

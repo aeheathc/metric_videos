@@ -54,8 +54,14 @@ impl SiteMetrics
                 w.percent = percent;
                 w.when = now;
             },
-            None => {self.videos[video_index].watchers.insert(ip, Watcher{percent: percent, when: now});}
+            None => {self.videos[video_index].watchers.insert(ip, Watcher{percent, when: now});}
         }
+    }
+}
+
+impl Default for SiteMetrics {
+    fn default() -> Self {
+        SiteMetrics::new()
     }
 }
 

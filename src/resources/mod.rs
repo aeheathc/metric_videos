@@ -42,23 +42,3 @@ fn html_construct(title: &str, head_extra: &str, body: &str) -> String
 </html>",
     &SETTINGS.media.videos.join("\",\""), head_extra, title, body)
 }
-
-
-/*
-Test those functions which weren't able to have good tests as part of their
-example usage in the docs, but are still possible to unit-test
-*/
-#[cfg(test)]
-mod tests
-{
-    use super::*;
-
-	// html_construct
-	#[test]
-	fn gen_page()
-	{
-        let html = html_construct("Not Found", "", "<h1>Not Found</h1><a href='/'>Return to Home</a>");
-        assert_eq!(&html[..15],"<!DOCTYPE html>");
-    }
-
-}
